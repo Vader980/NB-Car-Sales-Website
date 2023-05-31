@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  #form-container {
+    background-color: #f2f2f2;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  #car-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #car-form div {
+    margin: 0 1em;
+  }
+  
+  #car-form input[type="file"],
+  #car-form input[type="text"],
+  #car-form select {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 0.5em;
+  }
+  
+  #car-form button[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    margin-top: 1em;
+  }
+  
+  #car-list {
+    width: 100%;
+  }
+  
+  #car-list table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #car-list th,
+  #car-list td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #car-list th {
+    background-color: #f2f2f2;
+  }
+  
+  #car-list img {
+    width: 100%;
+  }
+  
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

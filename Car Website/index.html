@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+    <script src="https://unpkg.com/nodemailer@6.4.11/browser/index.js"></script>
+
+
+
+</head>
+<body>
+    
+<header class="header">
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"> <span>NB</span>CAR SALES </a>
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#vehicles">Latest Arrivals</a>
+        <a href="#featured">Showroom</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#services">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+ <!--    <div id="login-btn">
+        <button class="btn">login</button>
+        <i class="far fa-user"></i>
+    </div>-->
+
+</header> 
+    
+<!-- <div class="login-form-container">
+
+    <span id="close-login-form" class="fas fa-times"></span>
+
+    <form action="">
+        <h3>user login</h3>
+        <input type="email" id="email-input" placeholder="email" class="box">
+        <input type="password" id="password-input" placeholder="password" class="box">
+        <p> forget your password <a href="#">click here</a> </p>
+        <div id="message-box" style="display: none;"></div>
+        <div id="submit">
+            <button class="btn">login</button>
+        </div>
+    </form>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.16.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDsswiyJODDOpnt8-USSZgwi5PrYykHdgA",
+            authDomain: "nbcar-36415.firebaseapp.com",
+            databaseURL: "https://nbcar-36415-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "nbcar-36415",
+            storageBucket: "nbcar-36415.appspot.com",
+            messagingSenderId: "39523893639",
+            appId: "1:39523893639:web:e4dcf062191e38cdb4d322",
+            measurementId: "G-QYZRP6YTD7"
+};
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+         firebase.initializeApp(firebaseConfig);
+        // Get references to the login form elements
+  var emailInput = document.getElementById("email-input");
+  var passwordInput = document.getElementById("password-input");
+  var loginBtn = document.getElementById("submit");
+  
+  // Add a click event listener to the login button
+  loginBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+  
+    // Get the email and password from the form
+    var email = emailInput.value;
+    var password = passwordInput.value;
+  
+    // Sign in the user with email and password
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(function (user) {
+        var messageBox = document.getElementById("message-box");ß
+        messageBox.innerHTML = "User signed in: " + user.email;
+        messageBox.style.display = "block";
+
+    // Open the dashboard page
+    window.location.href = "car-management-system.html";
+      })
+      .catch(function (error) {
+        var messageBox = document.getElementById("message-box");
+        messageBox.innerHTML = "Error signing in: " + error.message;
+        messageBox.style.display = "block";
+      });
+  });
+      </script>
+
+</div>-->
+
+<section class="home" id="home">
+    <div class="slideshow-container">
+  
+      <!-- Slideshow -->
+      <div class="mySlides">
+        <h3 data-speed="-2" class="home-parallax">find your car</h3>
+        <img data-speed="5" class="home-parallax" src="https://i.imgur.com/VwiTWZd.jpg" alt="">
+        <a data-speed="7" href="#featured" class="btn home-parallax">explore cars</a>
+      </div>
+  
+      <!-- Add more slides here -->
+     <!--  <div class="mySlides">
+        <img data-speed="5" class="home-parallax" src="https://i.imgur.com/VwiTWZd.jpg" alt="">
+        <a data-speed="7" href="#featured" class="btn home-parallax">explore cars</a>
+      </div>-->
+  
+      <!-- Add more slides here -->
+      <!--  <div class="mySlides">
+        <img data-speed="5" class="home-parallax" src="" alt="">
+        <a data-speed="7" href="#featured" class="btn home-parallax">explore cars</a>
+      </div>-->
+  </section>
+
+  <script>
+    var slideIndex = 0;
+    showSlides(slideIndex);
+    
+    // Next/prev controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    // Dot controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 500); // Change image after every 1000 milliseconds (1 second)
+}
+
+showSlides();
+    </script>
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-home"></i>
+        <div class="content">
+            <h3>5 STAR</h3>
+            <p>Customer Service</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-car"></i>
+        <div class="content">
+            <h3>300+</h3>
+            <p>Cars</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-users"></i>
+        <div class="content">
+            <h3>320+</h3>
+            <p>Happy clients</p>
+        </div>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-car"></i>
+        <div class="content">
+            <h3>1500+</h3>
+            <p>Used Cars</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="vehicles" id="vehicles">
+
+    <h1 class="heading"><span>Latest Arrivals</span> </h1>
+
+    <div class="swiper vehicles-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="https://img.autotrader.co.za/22520237" alt="">
+                <div class="content">
+                    <h3>2022 VOLKSWAGEN TAIGO 1.0tsi r-line
+                    </h3>
+                    <div class="price"> <span>price : </span> POA</div>
+                    <p>
+                        New
+                        <span class="fas fa-circle"></span> 2022
+                        <span class="fas fa-circle"></span> 137KM
+                        <span class="fas fa-circle"></span> Automatic
+                        <span class="fas fa-circle"></span> Petrol
+                        <span class="fas fa-circle"></span> 260Kmph
+                    </p>
+                    <a href="#" class="btn">More Info</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://img.autotrader.co.za/22520105" alt="">
+                <div class="content">
+                    <h3>2023 LAND ROVER RANGE ROVER SPORT Autobiography dynamic supercharged</h3>
+                    <div class="price"> <span>price : </span> POA</div>
+                    <p>
+                        New
+                        <span class="fas fa-circle"></span> 2023
+                        <span class="fas fa-circle"></span> 160KM
+                        <span class="fas fa-circle"></span> Automatic
+                        <span class="fas fa-circle"></span> Petrol
+                        <span class="fas fa-circle"></span> 260Kmph
+                    </p>
+                    <a href="#" class="btn">More Info</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://img.autotrader.co.za/22519899" alt="">
+                <div class="content">
+                    <h3>2022 FORD MUSTANG 2.3t fastback</h3>
+                    <div class="price"> <span>price : </span> POA</div>
+                    <p>
+                        Used
+                        <span class="fas fa-circle"></span> 2022
+                        <span class="fas fa-circle"></span> 160KM
+                        <span class="fas fa-circle"></span> Automatic
+                        <span class="fas fa-circle"></span> Petrol
+                        <span class="fas fa-circle"></span> 260Kmph
+                    </p>
+                    <a href="#" class="btn">More Info</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://img.autotrader.co.za/22519620" alt="">
+                <div class="content">
+                    <h3>2015 Audi S3</h3>
+                    <div class="price"> <span>price : </span> R 429 990</div>
+                    <p>
+                        Used
+                        <span class="fas fa-circle"></span> 2015
+                        <span class="fas fa-circle"></span> 109 349KM
+                        <span class="fas fa-circle"></span> Automatic
+                        <span class="fas fa-circle"></span> Petrol
+                        <span class="fas fa-circle"></span> 260Kmph
+                    </p>
+                    <a href="#" class="btn">More Info</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://img.autotrader.co.za/22231930" alt="">
+                <div class="content">
+                    <h3>2021 MERCEDES-BENZ V-CLASS V300d exclusive</h3>
+                    <div class="price"> <span>Price: </span> R1 749 990</div>
+                    <p>
+                        New
+                        <span class="fas fa-circle"></span> 2021
+                        <span class="fas fa-circle"></span> 29 979KM
+                        <span class="fas fa-circle"></span> Automatic
+                        <span class="fas fa-circle"></span> Diesel
+                        <span class="fas fa-circle"></span> 260Kmph
+                    </p>
+                    <a href="#" class="btn">More Info</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<section class="featured" id="featured">
+
+    <h1 class="heading"> <span>Showroom</span> </h1>
+
+    <div class="swiper featured-slider">
+
+       <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="https://img.autotrader.co.za/20203375/Crop640x480" alt="">
+                <div class="content">
+                    <h3>Ford Mustang</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">R 600 000</div>
+                    <a href="#" class="btn">More Info</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://img.autotrader.co.za/22231719" alt="">
+                <div class="content">
+                    <h3>MERCEDES-BENZ</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">R 600 000</div>
+                    <a href="#" class="btn">More Info</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://img.autotrader.co.za/20203590/Crop640x480" alt="">
+                <div class="content">
+                    <h3>Ford Raptor</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">R 600 000</div>
+                    <a href="#" class="btn">More Info</a>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://img.autotrader.co.za/20019386/Crop640x480" alt="">
+                <div class="content">
+                    <h3>Porsche </h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="price">R 600 000</div>
+                    <a href="#" class="btn">More Info</a>
+                </div>
+            </div>
+
+       </div>
+
+       <div class="swiper-pagination"></div>
+
+    </div>
+
+    <div class="swiper featured-slider">
+
+        <div class="swiper-wrapper">
+ 
+             <div class="swiper-slide box">
+                 <img src="https://img.autotrader.co.za/20017898/Crop640x480" alt="">
+                 <div class="content">
+                     <h3>Porsche</h3>
+                     <div class="stars">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star-half-alt"></i>
+                     </div>
+                     <div class="price">R 600 000</div>
+                     <a href="#" class="btn">More Info</a>
+                 </div>
+             </div>
+ 
+             <div class="swiper-slide box">
+                 <img src="https://img.autotrader.co.za/20202529/Crop640x480" alt="">
+                 <div class="content">
+                     <h3>MERCEDES-BENZ</h3>
+                     <div class="stars">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star-half-alt"></i>
+                     </div>
+                     <div class="price">R 600 000</div>
+                     <a href="#" class="btn">More Info</a>
+                 </div>
+             </div>
+ 
+             <div class="swiper-slide box">
+                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeKbwxSmRgqLu80QrJdVMU6uaqj4FYPkldgQ&usqp=CAU" alt="">
+                 <div class="content">
+                     <h3>BMW</h3>
+                     <div class="stars">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star-half-alt"></i>
+                     </div>
+                     <div class="price">R 600 000</div>
+                     <a href="#" class="btn">More Info</a>
+                 </div>
+             </div>
+ 
+             <div class="swiper-slide box">
+                 <img src="https://img.autotrader.co.za/20110668/Crop640x480" alt="">
+                 <div class="content">
+                     <h3>MERCEDES-BENZ</h3>
+                     <div class="stars">
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star"></i>
+                         <i class="fas fa-star-half-alt"></i>
+                     </div>
+                     <div class="price">R 600 000</div>
+                     <a href="#" class="btn">More Info</a>
+                 </div>
+             </div>
+ 
+        </div>
+ 
+        <div class="swiper-pagination"></div>
+ 
+     </div>
+
+</section>
+
+<section class="services" id="services">
+
+    <h1 class="heading"><span>About Us</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-car"></i>
+            <h3>Founded</h3>
+            <p></p>
+            <a href="#" class="btn"> read more</a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-car"></i>
+            <h3>Years Of Experince</h3>
+            <p></p>
+            <a href="#" class="btn"> read more</a>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-car"></i>
+            <h3>Principles</h3>
+            <p></p>
+            <a href="#" class="btn"> read more</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="reviews" id="reviews">
+
+    <h1 class="heading"> <span>review</span> </h1>
+
+    <div class="swiper review-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="https://media.istockphoto.com/id/1329031407/photo/young-man-with-backpack-taking-selfie-portrait-on-a-mountain-smiling-happy-guy-enjoying.jpg?s=612x612&w=0&k=20&c=WvjAEx3QlWoAn49drp0N1vmxAgGObxWDpoXtaU2iB4Q=" alt="">
+                <div class="content">
+                    <p>XXXXXXXXXXX</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://media.istockphoto.com/id/1329031407/photo/young-man-with-backpack-taking-selfie-portrait-on-a-mountain-smiling-happy-guy-enjoying.jpg?s=612x612&w=0&k=20&c=WvjAEx3QlWoAn49drp0N1vmxAgGObxWDpoXtaU2iB4Q=" alt="">
+                <div class="content">
+                    <p>XXXXXXXXXXX</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://media.istockphoto.com/id/1329031407/photo/young-man-with-backpack-taking-selfie-portrait-on-a-mountain-smiling-happy-guy-enjoying.jpg?s=612x612&w=0&k=20&c=WvjAEx3QlWoAn49drp0N1vmxAgGObxWDpoXtaU2iB4Q=" alt="">
+                <div class="content">
+                    <p>XXXXXXXXXXX</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://media.istockphoto.com/id/1329031407/photo/young-man-with-backpack-taking-selfie-portrait-on-a-mountain-smiling-happy-guy-enjoying.jpg?s=612x612&w=0&k=20&c=WvjAEx3QlWoAn49drp0N1vmxAgGObxWDpoXtaU2iB4Q=" alt="">
+                <div class="content">
+                    <p>XXXXXXXXXXX</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://media.istockphoto.com/id/1329031407/photo/young-man-with-backpack-taking-selfie-portrait-on-a-mountain-smiling-happy-guy-enjoying.jpg?s=612x612&w=0&k=20&c=WvjAEx3QlWoAn49drp0N1vmxAgGObxWDpoXtaU2iB4Q=" alt="">
+                <div class="content">
+                    <p>"The financing process was straightforward and stress-free. The team at XYZ Motors worked with me to find the best loan options and made sure I understood all the details before signing any paperwork.
+
+                        I also appreciated the thorough inspection and detailing of the car before I took it home. It was obvious that the team at XYZ Motors takes pride in the quality of their vehicles.
+                        
+                        Overall, I had a smooth and satisfying experience at XYZ Motors and would definitely recommend them to anyone in the market for a pre-owned vehicle."</p>
+                    <h3>john deo</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="https://media.istockphoto.com/id/1329031407/photo/young-man-with-backpack-taking-selfie-portrait-on-a-mountain-smiling-happy-guy-enjoying.jpg?s=612x612&w=0&k=20&c=WvjAEx3QlWoAn49drp0N1vmxAgGObxWDpoXtaU2iB4Q=" alt="">
+                <div class="content">
+                    <p>"I recently purchased a new car from NB Car Sales Dealership and I had an amazing experience. The sales team was knowledgeable, friendly, and not pushy at all. They took the time to understand my needs and helped me find the perfect car for my budget. The financing process was seamless and straightforward.
+
+                        The showroom was clean and well-organized, making it easy to compare different models and features. I was also impressed by the attention to detail in maintaining the cars on the lot.
+                        
+                        Overall, I highly recommend NB Car Sales Dealership to anyone in the market for a new car. They made the process easy and enjoyable, and I'm very happy with my new vehicle. Thank you to the team at NB Car Sales Dealership for such a great experience."
+                        
+                        </p>
+                    <h3>Person 1</h3>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"><span>Contact</span> Us</h1>
+
+    <div class="row">
+
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1403.3975114480236!2d27.0946034!3d-26.7138799!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x348e7e99828e124f!2sNB+Car+Sales!5e0!3m2!1sen!2sza!4v1589746141224!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
+
+       <!-- <form action="">
+            <h3>GET IN TOUCH WITH OUR SALES PERSON</h3>
+            <input type="text" id="name" name="name" placeholder="your name" class="box">
+            <input type="email" id="email" name="email" placeholder="your email" class="box">
+            <input type="tel" id="subject" name="subject" placeholder="subject" class="box">
+            <textarea id="message" name="message" placeholder="your message" class="box" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+          </form> -->
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const name = document.querySelector('#name').value;
+    const email = document.querySelector('#email').value;
+    const subject = document.querySelector('#subject').value;
+    const message = document.querySelector('#message').value;
+
+  // send the data to AWS Lambda
+  fetch('https://your-aws-lambda-function-endpoint', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name, email, subject, message })
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+});
+
+    </script>
+    </div>
+
+</section>
+
+<section class="footer" id="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Go To </h3>
+            <a href="#home"> <i class="fas fa-arrow-right"></i> Home </a>
+            <a href="#vehicles"> <i class="fas fa-arrow-right"></i> Latest Arrivals</a>
+            <a href="#featured"> <i class="fas fa-arrow-right"></i> Showroom</a>
+            <a href="#reviews"> <i class="fas fa-arrow-right"></i> Reviews </a>
+            <a href="#services"> <i class="fas fa-arrow-right"></i> About Us </a>
+            <a href="#contact"> <i class="fas fa-arrow-right"></i> Contact </a>
+        </div>
+
+
+        <div class="box">
+            <h3>Contact Us</h3>
+            <a href="tel:0825584000"> <i class="fas fa-phone"></i> 082 558 4000</a>
+            <a href="tel:+0182946169"> <i class="fas fa-phone"></i> +018 294 6169</a>
+            <a href="mailto:noshi@nbcarsales.co.za"> <i class="fas fa-envelope"></i> noshi@nbcarsales.co.za </a>
+            <a href="https://maps.apple.com/?q=81+Nelson+Mandela+Drive,+Potchefstroom"> <i class="fas fa-map-marker-alt"></i> 81 Nelson Mandela Drive, Potchefstroom</a>
+        </div>
+
+        <div class="box">
+            <h3>Social Media</h3>
+            <a href="https://www.facebook.com/nbcarsalespotch/"> <i class="fab fa-facebook-f"></i> Facebook </a>
+            <a href="https://twitter.com/nbcarsales?lang=en"> <i class="fab fa-twitter"></i> Twitter </a>
+            <a href="https://www.instagram.com/nbcarsales/?hl=en"> <i class="fab fa-instagram"></i> Instagram </a>
+        </div>
+
+    </div>
+
+    <div class="credit"> created by VADER980 | all rights reserved </div>
+
+</section>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <!-- Firebase Database -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
